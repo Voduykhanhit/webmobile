@@ -95,7 +95,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin.login'], function () {
         Route::group(['prefix' => 'donhang', 'middleware' => 'roles.editor'], function () {
                 Route::get('/danhsach', 'DonHangController@getDanhSach');
                 Route::get('/chitiet/{id}', 'DonHangController@getChiTiet');
-                Route::get('/indonhang/{checkout_code}', 'DonHangController@getInDonHang');
+                Route::get('/indonhang/{checkout_code}','DonHangController@getInDonHang');
                 Route::get('/edit/{order_id}', 'DonHangController@getEdit');
                 Route::post('/edit/{order_id}', 'DonHangController@postEdit');
                 Route::get('/timkiem','DonHangController@getTimKiem');

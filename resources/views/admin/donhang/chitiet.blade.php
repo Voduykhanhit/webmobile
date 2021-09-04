@@ -105,7 +105,6 @@
             <td>{{$shipping->shipping_address}}</td>
             <td>{{$shipping->shipping_notes}}</td>
           </tr>
-         
         </tbody>
       </table>
     </div>
@@ -116,8 +115,7 @@
               <div class="panel-heading">
                   SẢN PHẨM MUA
               </div>
-        
-  <div>
+        <div>
       <table class="table" ui-jq="footable" ui-options='{
         "paging": {
           "enabled": true
@@ -129,20 +127,18 @@
           "enabled": true
         }}'>
         <caption>
-                @if(session('thongbao'))
-                <div class="alert alert-success">
-                       {{session('thongbao')}}
-                </div>
-                @endif
-
-                @if(count($errors)>0)
-                  <div class="alert alert-danger">
-                        @foreach($errors->All() as $err)
-                        {{$err}}
-                        @endforeach
-                  </div>
-                @endif
-
+          @if(session('thongbao'))
+            <div class="alert alert-success">
+                  {{session('thongbao')}}
+            </div>
+          @endif
+          @if(count($errors)>0)
+            <div class="alert alert-danger">
+                  @foreach($errors->All() as $err)
+                  {{$err}}
+                  @endforeach
+            </div>
+          @endif
         </caption>
         <thead>
           <tr>
@@ -152,7 +148,6 @@
             <th class="text-center">Phí ship hàng</th>
             <th class="text-center">Số lượng</th>
             <th class="text-center">Tổng tiền</th>
-
           </tr>
         </thead>
         <tbody>
@@ -165,27 +160,25 @@
                     $tong+=$subtotal;
               @endphp
               <tr data-expanded="true" class="text-center">
-                    <td>{{$i}}</td>
-                    <td>{{$ct->product_name}}</td>
-                    <td>{{number_format($ct->product_price)."đ"}}</td>
-                    <td>{{number_format($ct->product_feeship)}}đ</td>
-                    <td>{{$ct->product_sales_quantity}}</td>
-                    <td>{{number_format($subtotal)."đ"}}</td>
+                <td>{{$i}}</td>
+                <td>{{$ct->product_name}}</td>
+                <td>{{number_format($ct->product_price)."đ"}}</td>
+                <td>{{number_format($ct->product_feeship)}}đ</td>
+                <td>{{$ct->product_sales_quantity}}</td>
+                <td>{{number_format($subtotal)."đ"}}</td>
               </tr>
           @endforeach
               <tr>
-                    <td colspan="4" style="color:red;">
-                      Phí ship: {{number_format($ct->product_feeship)}}đ <br>
-                      Tổng thanh toán: {{number_format($tong+$ct->product_feeship)}}đ 
-                    </td>
-                    <td>
-                        <a class="btn btn-primary" target="_blank" href="{{url('/admin/donhang/indonhang/'.$ct->order_code)}}">In đơn hàng</a>
-                    </td>
-
+                <td colspan="4" style="color:red;">
+                  Phí ship: {{number_format($ct->product_feeship)}}đ <br>
+                  Tổng thanh toán: {{number_format($tong+$ct->product_feeship)}}đ 
+                </td>
+                <td>
+                    <a class="btn btn-primary" target="_blank" href="{{url('/admin/donhang/indonhang/'.$ct->order_code)}}">In đơn hàng</a>
+                </td>
               </tr>
         </tbody>
       </table>
-      
   </div>
 </div>
 

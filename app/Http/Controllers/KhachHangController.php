@@ -30,6 +30,7 @@ class KhachHangController extends Controller
     }
     public function getTimKiem(Request $request)
     {
+        dd($request->tukhoa);
         $tukhoa = $request->get('tukhoa');
         $khachhang = KhachHang::where('customer_name','like','%'.$tukhoa.'%')->paginate(5);
         return view('admin.khachhang.timkiem',compact('tukhoa','khachhang'));

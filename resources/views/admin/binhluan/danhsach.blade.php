@@ -29,12 +29,10 @@ Danh sách bình luận
               @if(count($errors)>0)
                 <div class="alert alert-danger" id="alert">
                   @foreach($errors->All() as $err)
-                  {{$err}}
+                    {{$err}}
                   @endforeach
-
                 </div>
               @endif
-
             </caption>
             <thead>
               <tr>

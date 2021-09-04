@@ -10,7 +10,6 @@ class Admin extends Authenticatable
 {
     protected $table = 'tbl_admin';
     protected $primaryKey = 'admin_id';
-
     public function getAuthPassword(){
         return $this->admin_password;
     }
@@ -24,10 +23,8 @@ class Admin extends Authenticatable
     }
     public function hasAnyRoles($roles)
     {
-        
         return null !== $this->roles()->whereIn('roles_name',$roles)->first();
     }
-    
     public function hasRole($role)
     {
         return null !== $this->roles()->where('roles_name',$role)->first(); //trả về giá trị rỗng khi biến muốn đem so sánh khác biến trong cơ sở dữ liệu

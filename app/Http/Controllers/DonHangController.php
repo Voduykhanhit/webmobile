@@ -29,22 +29,19 @@ class DonHangController extends Controller
         return view('admin.donhang.danhsach',compact('donhang'));
     }
     public function getChiTiet($id){
-      
         $chitiethoadon = ChiTietHoaDon::where('order_code',$id)->get();
-        $hoadon = HoaDon::where('order_code',$id)->get();
+        $hoadon = HoaDon::where('order_code',$id)->first();
+        
+            $customer_id = $hoadon->customer_id;
+            $shipping_id = $hoadon->shipping_id;
+            $payment_id = $hoadon->payment_id;
         foreach($hoadon as $hd)
         {
-            $customer_id = $hd->customer_id;
-            $shipping_id = $hd->shipping_id;
-            $payment_id = $hd->payment_id;
+            
         }
         $khachhang = KhachHang::where('customer_id',$customer_id)->first();
         $shipping = GiaoHang::where('shipping_id',$shipping_id)->first();
         $payment = ThanhToan::where('payment_id',$payment_id)->first();
-
-       
-      
-       
         return view('admin.donhang.chitiet',compact('chitiethoadon','khachhang','shipping','payment'));
     }
     public function getInDonHang($checkout_code){
@@ -64,11 +61,6 @@ class DonHangController extends Controller
         $khachhang = KhachHang::where('customer_id',$customer_id)->first();
         $shipping = GiaoHang::where('shipping_id',$shipping_id)->first();
         $payment = ThanhToan::where('payment_id',$payment_id)->first();
-
-        
-
-       
-
         $output='';
 
         $output .='

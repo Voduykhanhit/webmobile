@@ -15,34 +15,34 @@
 				</ol>
 			</div>
             <div class="table-responsive cart_info">
-                            <table class="table table-condensed">
-                                        <thead>
-                                            <tr class="cart_menu text-center">
-                                                <td class="description">Tên khách hàng</td>
-                                                <td class="price">Số điện thoại</td>
-                                                <td>Email</td>
-                                                <td>Hình thức thanh toán</td>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                               
-                                                <tr class="text-center">
-                                                    <td>{{$khachhang->customer_name}}</td>
-                                                    <td>{{$khachhang->customer_phone}}</td>
-                                                    <td>{{$khachhang->customer_email}}</td>
-                                                    <td>@if($payment->payment_method==1)
-                                                            {{'Thanh toán nhận hàng'}}
-                                                        @elseif($payment->payment_method==2)
-                                                            {{'Thanh toán bằng thẻ ATM'}}
-                                                        @else
-                                                            {{'Thanh toán thẻ ghi nợ'}}
-                                                        @endif
-                                                    </td>
-                                                </tr>
-                                                      
-                                        </tbody>
-                                </table>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr class="cart_menu text-center">
+                            <td class="description">Tên khách hàng</td>
+                            <td class="price">Số điện thoại</td>
+                            <td>Email</td>
+                            <td>Hình thức thanh toán</td>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                            
+                            <tr class="text-center">
+                                <td>{{$khachhang->customer_name}}</td>
+                                <td>{{$khachhang->customer_phone}}</td>
+                                <td>{{$khachhang->customer_email}}</td>
+                                <td>@if($payment->payment_method==1)
+                                        {{'Thanh toán nhận hàng'}}
+                                    @elseif($payment->payment_method==2)
+                                        {{'Thanh toán bằng thẻ ATM'}}
+                                    @else
+                                        {{'Thanh toán thẻ ghi nợ'}}
+                                    @endif
+                                </td>
+                            </tr>
+                                    
+                    </tbody>
+                </table>
             </div>
             <div class="breadcrumbs">
 				<ol class="breadcrumb">
@@ -52,24 +52,24 @@
 				</ol>
 			</div>
             <div class="table-responsive cart_info">
-                            <table class="table table-condensed">
-                                        <thead>
-                                            <tr class="cart_menu text-center">
-                                                <td class="image">Tên người nhận</td>
-                                                <td class="description">Số điện thoại</td>
-                                                <td class="price">Địa chỉ</td>
-                                                <td>Ghi chú</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                           <tr class="text-center">
-                                                <td>{{$shipping->shipping_name}}</td>
-                                                <td>{{$shipping->shipping_phone}}</td>
-                                                <td>{{$shipping->shipping_address}}</td>
-                                                <td>{{$shipping->shipping_notes}}</td>
-                                           </tr>
-                                        </tbody>
-                                </table>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr class="cart_menu text-center">
+                            <td class="image">Tên người nhận</td>
+                            <td class="description">Số điện thoại</td>
+                            <td class="price">Địa chỉ</td>
+                            <td>Ghi chú</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td>{{$shipping->shipping_name}}</td>
+                            <td>{{$shipping->shipping_phone}}</td>
+                            <td>{{$shipping->shipping_address}}</td>
+                            <td>{{$shipping->shipping_notes}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="breadcrumbs">
 				<ol class="breadcrumb">

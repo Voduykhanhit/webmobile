@@ -17,7 +17,6 @@ class SanPhamImport implements ToModel,WithHeadingRow
     */
     public function model(array $row)
     {
-       
         return new SanPham([
             'product_name' => $row['ten_san_pham'],
             'category_id' => $row['danh_muc'],
@@ -34,10 +33,9 @@ class SanPhamImport implements ToModel,WithHeadingRow
     public function headingRow(): int     
     {         
         return 6;
-
     }
-    public function map($row): array 
-    { 
-        return [ $row->product_name, $row->danhmucsanpham->category_name, $row->thuonghieu->brand_name, $row->product_quantity, $row->product_desc, $row->product_content,$row->product_price,$row->product_image,$row->product_status, ]; 
-    } 
+    // public function map($row): array 
+    // { 
+    //     return [ $row->product_name, $row->danhmucsanpham->category_name, $row->thuonghieu->brand_name, $row->product_quantity, $row->product_desc, $row->product_content,$row->product_price,$row->product_image,$row->product_status, ]; 
+    // } 
 }

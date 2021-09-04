@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -12,8 +11,6 @@ use App\Imports\HinhAnhSanPhamImport;
 use App\Exports\HinhAnhSanPhamExport;
 use Illuminate\Support\Facades\DB;
 use Excel;
-
-
 class HinhAnhSanPhamController extends Controller
 {
     public function getDanhSach(){
@@ -22,14 +19,13 @@ class HinhAnhSanPhamController extends Controller
     }
     public function getThem()
     {
-            $sanpham = SanPham::all();
-           return view('admin.hinhanhsanpham.them',compact('sanpham'));
+        $sanpham = SanPham::all();
+        return view('admin.hinhanhsanpham.them',compact('sanpham'));
     }
-
     public function postThem(Request $request)
     {
            $hinhanh = new HinhAnhSanPham; 
-        $this->validate($request,
+            $this->validate($request,
             [
                 'SanPham'=>'required'
             ],
@@ -59,9 +55,7 @@ class HinhAnhSanPhamController extends Controller
             $hinhanh->product_id = $request->SanPham;
             $hinhanh->save();
             return redirect('admin/hinhanhsanpham/danhsach')->with('thongbao','Thêm thành công hình ảnh sản phẩm: '.$request->SanPham);
-
     }
-
     public function getSua($id)
     {
            $hinhanh = HinhAnhSanPham::find($id);
@@ -122,5 +116,4 @@ class HinhAnhSanPhamController extends Controller
     {
         return Excel::download(new HinhAnhSanPhamExport,'danh-sach-hinh-anh.xlsx'); 
     }
-   
 }
