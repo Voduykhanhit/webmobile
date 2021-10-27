@@ -3,7 +3,7 @@
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
-                @hasrole(['NhanVienQuanLy','Admin'])
+                //@hasrole(['NhanVienQuanLy','Admin'])
                 <li class="sub-menu">
                     <a href="">
                     <i class="fas fa-folder"></i>
@@ -55,8 +55,8 @@
                         <li><a href="{{url('/admin/donhang/danhsach')}}"><i class="fas fa-clipboard-list"></i>Danh sách</a></li>
                     </ul>
                 </li>
-                @endhasrole
-                @hasrole(['NhanVienQuanLy','Admin'])
+                //@endhasrole
+                //@hasrole(['NhanVienQuanLy','Admin'])
                 <li class="sub-menu">
                     <a href="javascript:;">
                     <i class="fas fa-folder"></i>
@@ -77,8 +77,8 @@
                         <li><a href="{{url('/admin/phivanchuyen/them')}}"><i class="fas fa-plus"></i>Thêm và liệt kê</a></li>
                     </ul>
                 </li>
-                @endhasrole
-                @hasrole(['NhanVienHoTro','Admin'])
+                //@endhasrole
+                //@hasrole(['NhanVienHoTro','Admin'])
                 <li class="sub-menu">
                     <a href="javascript:;">
                     <i class="fas fa-folder"></i>
@@ -88,8 +88,8 @@
                         <li><a href="{{url('/admin/binhluan/danhsach')}}"><i class="fas fa-clipboard-list"></i>Liệt kê</a></li>
                     </ul>
                 </li>
-                @endhasrole
-                @hasrole(['Admin','NhanVienQuanLy'])
+                //@endhasrole
+                //@hasrole(['Admin','NhanVienQuanLy'])
                 <li class="sub-menu">
                     <a href="javascript:;">
                     <i class="fas fa-folder"></i>
@@ -99,8 +99,8 @@
                         <li><a href="{{url('/admin/user/danhsach')}}"><i class="fas fa-clipboard-list"></i>Liệt kê</a></li>
                     </ul>
                 </li>
-                @endhasrole
-                @hasrole(['NhanVienQuanLy','Admin'])
+                //@endhasrole
+               // @hasrole(['NhanVienQuanLy','Admin'])
                 <li class="sub-menu">
                     <a href="javascript:;">
                     <i class="fas fa-folder"></i>
@@ -110,7 +110,7 @@
                         <li><a href="{{url('/admin/khachhang/danhsach')}}"><i class="fas fa-clipboard-list"></i>Danh sách</a></li>
                     </ul>
                 </li>
-                @endhasrole
+                //@endhasrole
                 <li>
                     <a href="LogoutAdmin">
                         <i class="fa fa-user"></i>
