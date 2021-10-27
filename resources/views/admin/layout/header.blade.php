@@ -21,11 +21,7 @@
             <i class="far fa-user"></i>
            
                 <span class="username">
-                   @php 
-                   $name = Auth::user()->admin_name;
-                  @endphp
-                  {{$name}}
-                    
+                              
                 </span>
             
              
