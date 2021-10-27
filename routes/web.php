@@ -19,13 +19,13 @@ use Illuminate\Support\Facades\DB;
 Route::get('/', 'PagesController@trangchu');
 
 
-Route::get('/LoginAdmin', 'AdminController@getLoginAdmin');
-Route::post('/CheckLoginAdmin', 'AdminController@postCheckLogin');
-Route::get('/LogoutAdmin', 'AdminController@CkeckLogout');
-Route::get('/ResetPassword','AdminController@getViewReset');
-Route::post('/XulyResetPass','AdminController@postXulyReset');
+//Route::get('/LoginAdmin', 'AdminController@getLoginAdmin');
+//Route::post('/CheckLoginAdmin', 'AdminController@postCheckLogin');
+//Route::get('/LogoutAdmin', 'AdminController@CkeckLogout');
+//Route::get('/ResetPassword','AdminController@getViewReset');
+//Route::post('/XulyResetPass','AdminController@postXulyReset');
 //Route Trang quản trị Admin
-Route::group(['prefix' => 'admin', 'middleware' => 'admin.login'], function () {
+Route::group(['prefix' => 'admin'/*, 'middleware' => 'admin.login'*/], function () {
 
         Route::get('trangchu', 'AdminController@TrangChu');
         Route::post('/thongtincanhan/{admin_id}','UserController@postSuaThongTin');
@@ -42,7 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin.login'], function () {
         });
 
 
-        Route::group(['prefix' => 'thuonghieu', 'middleware' => 'roles.editor'], function () {
+        Route::group(['prefix' => 'thuonghieu'/*, 'middleware' => 'roles.editor'*/], function () {
                 //  admin/thuonghieu/danhsach
                 Route::get('/danhsach', 'ThuongHieuController@getDanhSach');
                 Route::get('/them', 'ThuongHieuController@getThem');
@@ -56,7 +56,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin.login'], function () {
         });
 
 
-        Route::group(['prefix' => 'sanpham', 'middleware' => 'roles.editor'], function () {
+        Route::group(['prefix' => 'sanpham'/*, 'middleware' => 'roles.editor'*/], function () {
                 //  admin/sanpham/danhsach
                 Route::get('/danhsach', 'SanPhamController@getDanhSach');
                 Route::get('/them', 'SanPhamController@getThem');
@@ -80,7 +80,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin.login'], function () {
                 Route::get('/xoa/{id}', 'SlideController@getXoa');
         });
 
-        Route::group(['prefix' => 'hinhanhsanpham', 'middleware' => 'roles.editor'], function () {
+        Route::group(['prefix' => 'hinhanhsanpham'/*, 'middleware' => 'roles.editor'*/], function () {
                 //  admin/slide/danhsach
                 Route::get('/danhsach', 'HinhAnhSanPhamController@getDanhSach');
                 Route::get('/them', 'HinhAnhSanPhamController@getThem');
@@ -92,7 +92,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin.login'], function () {
                 Route::get('/xuatexcel', 'HinhAnhSanPhamController@getXuatExcel');
                 
         });
-        Route::group(['prefix' => 'donhang', 'middleware' => 'roles.editor'], function () {
+        Route::group(['prefix' => 'donhang'/*, 'middleware' => 'roles.editor'*/], function () {
                 Route::get('/danhsach', 'DonHangController@getDanhSach');
                 Route::get('/chitiet/{id}', 'DonHangController@getChiTiet');
                 Route::get('/indonhang/{checkout_code}','DonHangController@getInDonHang');
@@ -102,7 +102,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin.login'], function () {
         });
 
 
-        Route::group(['prefix' => 'phivanchuyen', 'middleware' => 'roles.editor'], function () {
+        Route::group(['prefix' => 'phivanchuyen'/*, 'middleware' => 'roles.editor'*/], function () {
 
                 Route::get('/them', 'PhiVanChuyenController@getThem');
                 Route::post('/selectpvc', 'PhiVanChuyenController@postSelect');
@@ -111,13 +111,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin.login'], function () {
                 Route::get('/xoa/{id}', 'PhiVanChuyenController@getXoa');
         });
 
-        Route::group(['prefix' => 'user', ['middleware' => ['roles.admin','roles.editor']]], function () {
+        Route::group(['prefix' => 'user'/*, ['middleware' => ['roles.admin','roles.editor']]*/], function () {
                 Route::get('/danhsach', 'UserController@getDanhSach');
                 Route::post('/phanquyen', 'UserController@postPhanQuyen');
                 Route::get('/deleteuser/{admin_id}', 'UserController@DeleteUser');
                 Route::post('/them','UserController@postThemUser');
         });
-        Route::group(['prefix' => 'binhluan', 'middleware' => 'roles.censorship'], function () {
+        Route::group(['prefix' => 'binhluan'/*, 'middleware' => 'roles.censorship'*/], function () {
                 Route::get('/danhsach', 'BinhLuanController@getDanhSach');
                 Route::post('/traloibinhluan', 'BinhLuanController@postReply');
                 Route::get('/anbinhluan/{id}', 'BinhLuanController@getAn');
@@ -125,7 +125,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin.login'], function () {
                 Route::get('/xoabinhluan/{id}','BinhLuanController@getXoa');
         });
         // khách hàng
-        Route::group(['prefix' => 'khachhang', 'middleware' => 'roles.editor'], function () {
+        Route::group(['prefix' => 'khachhang'/*, 'middleware' => 'roles.editor'*/], function () {
                 Route::get('/danhsach', 'KhachHangController@getDanhSach');
                 Route::get('/Khoa/{customer_id}', 'KhachHangController@getKhoa');
                 Route::get('/Mokhoa/{customer_id}', 'KhachHangController@getMoKhoa');
