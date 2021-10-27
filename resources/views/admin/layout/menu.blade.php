@@ -3,7 +3,7 @@
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
-                //@hasrole(['NhanVienQuanLy','Admin'])
+                <!--@hasrole(['NhanVienQuanLy','Admin'])-->
                 <li class="sub-menu">
                     <a href="">
                     <i class="fas fa-folder"></i>
